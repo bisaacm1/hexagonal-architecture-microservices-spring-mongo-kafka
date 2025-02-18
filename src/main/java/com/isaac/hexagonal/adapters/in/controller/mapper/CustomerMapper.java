@@ -1,11 +1,10 @@
 package com.isaac.hexagonal.adapters.in.controller.mapper;
 
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-
 import com.isaac.hexagonal.adapters.in.controller.request.CustomerRequest;
 import com.isaac.hexagonal.adapters.in.controller.response.CustomerResponse;
 import com.isaac.hexagonal.application.core.domain.Customer;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface CustomerMapper {

@@ -6,10 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.isaac.hexagonal.adapters.out.client.response.AddressResponse;
 
-@FeignClient(
-    name = "FindAddressByZipCodeClient",
-    url = "${isaac.client.address.url}"
-)
+@FeignClient(name = "FindAddressByZipCodeClient", url = "${isaac.client.address.url}")
 public interface FindAddressByZipCodeClient {
 
     @GetMapping("/{zipCode}")

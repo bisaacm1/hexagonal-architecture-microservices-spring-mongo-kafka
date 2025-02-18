@@ -1,8 +1,8 @@
 package com.isaac.hexagonal.adapters.in.controller.request;
 
-import javax.validation.constraints.NotBlank;
-
 import lombok.Data;
+
+import javax.validation.constraints.NotBlank;
 
 @Data
 public class CustomerRequest {

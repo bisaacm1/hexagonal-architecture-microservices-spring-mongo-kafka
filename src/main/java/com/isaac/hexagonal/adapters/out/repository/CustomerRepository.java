@@ -4,5 +4,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.isaac.hexagonal.adapters.out.repository.entity.CustomerEntity;
 
-public interface CustomerRepository extends MongoRepository<CustomerEntity, String>  {
+public interface CustomerRepository extends MongoRepository<CustomerEntity, String> {
 }

@@ -1,55 +1,24 @@
-### General ###
-.DS_Store
-Thumbs.db
-*.log
-*.tmp
-*.lock
-*.swp
-*.bak
-*.old
-*.orig
-*.rej
-*.sublime-workspace
-*.sublime-project
-*.vscode/
-
-### Java ###
-*.class
-*.war
-*.ear
-*.jar
-*.nar
-*.apk
-*.exec
-hs_err_pid*
-
-### Gradle ###
+HELP.md
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
 
-### Maven ###
-.mvn/
-target/
-!**/src/main/**/target/
-!**/src/test/**/target/
-
-### Spring Boot ###
-HELP.md
-spring.log
-
-### Eclipse ###
+### STS ###
 .apt_generated
 .classpath
 .factorypath
 .project
-.settings/
+.settings
+.springBeans
+.sts4-cache
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 
 ### IntelliJ IDEA ###
-.idea/
+.idea
 *.iws
 *.iml
 *.ipr
@@ -64,7 +33,7 @@ out/
 /nbdist/
 /.nb-gradle/
 
-### Visual Studio Code ###
+### VS Code ###
 .vscode/
 
 ### Logs ###
