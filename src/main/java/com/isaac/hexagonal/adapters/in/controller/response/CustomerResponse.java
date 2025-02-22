@@ -1,16 +1,4 @@
 package com.isaac.hexagonal.adapters.in.controller.response;
 
-import lombok.Data;
-
-@Data
-public class CustomerResponse {
-
-    private String name;
-
-    private AddressResponse address;
-
-    private String cpf;
-
-    private Boolean isValidCpf;
-
+public record CustomerResponse(String name, AddressResponse address, String cpf, Boolean isValidCpf) {
 }
