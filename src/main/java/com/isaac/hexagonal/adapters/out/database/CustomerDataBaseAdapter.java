@@ -1,22 +1,18 @@
-package com.isaac.hexagonal.adapters.out;
+package com.isaac.hexagonal.adapters.out.database;
 
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.isaac.hexagonal.adapters.out.database.repository.CustomerRepository;
 import org.springframework.stereotype.Component;
 
-import com.isaac.hexagonal.adapters.out.repository.CustomerRepository;
-import com.isaac.hexagonal.adapters.out.repository.mapper.CustomerEntityMapper;
+import com.isaac.hexagonal.adapters.out.database.mapper.CustomerEntityMapper;
 import com.isaac.hexagonal.application.core.domain.Customer;
 import com.isaac.hexagonal.application.ports.out.CustomerOutputPort;
 
 @Component
-public class CustomerAdapter implements CustomerOutputPort {
+public class CustomerDataBaseAdapter implements CustomerOutputPort {
 
-    @Autowired
     private CustomerRepository customerRepository;
-
-    @Autowired
     private CustomerEntityMapper customerEntityMapper;
 
     @Override
@@ -27,8 +23,11 @@ public class CustomerAdapter implements CustomerOutputPort {
 
     @Override
     public void update(Customer customer) {
-        var customerEntity = customerEntityMapper.toCustomerEntity(customer);
-        customerRepository.save(customerEntity);
+        var existingCustomer = customerRepository.findById(customer.getId());
+        existingCustomer.ifPresent(existing -> {
+            var customerEntity = customerEntityMapper.toCustomerEntity(customer);
+            customerRepository.save(customerEntity);
+        });
     }
 
     @Override

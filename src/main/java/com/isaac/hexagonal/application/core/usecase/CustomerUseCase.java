@@ -13,8 +13,8 @@ public class CustomerUseCase implements CustomerInputPort {
     private final SendCpfForValidationOutputPort sendCpfForValidationOutputPort;
 
     public CustomerUseCase(FindAddressByZipCodeOutputPort findAddressByZipCodeOutputPort,
-            CustomerOutputPort customerOutputPort,
-            SendCpfForValidationOutputPort sendCpfForValidationOutputPort) {
+                           CustomerOutputPort customerOutputPort,
+                           SendCpfForValidationOutputPort sendCpfForValidationOutputPort) {
         this.findAddressByZipCodeOutputPort = findAddressByZipCodeOutputPort;
         this.customerOutputPort = customerOutputPort;
         this.sendCpfForValidationOutputPort = sendCpfForValidationOutputPort;
