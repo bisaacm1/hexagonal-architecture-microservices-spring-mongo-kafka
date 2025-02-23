@@ -1,23 +1,11 @@
-HELP.md
+# Gradle directories and files
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
-
-### IntelliJ IDEA ###
+# IDE configuration files (IntelliJ IDEA)
 .idea
 *.iws
 *.iml
@@ -26,31 +14,40 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+# Eclipse temporary files (remove if not using Eclipse)
+.classpath
+.project
+.settings
 
-### VS Code ###
+# Spring Tool Suite (STS) temporary files
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+# NetBeans configuration files (remove if not using NetBeans)
+# /nbproject/private/
+# /nbbuild/
+# /dist/
+# /nbdist/
+# .nb-gradle/
+
+# VS Code temporary files
 .vscode/
 
-### Logs ###
+# Log files
 *.log
 *.out
 *.err
 
-### OS generated files ###
+# OS generated files
 .DS_Store
-*.swp
-*.swo
-*.bak
 Thumbs.db
 Desktop.ini
 $RECYCLE.BIN/
 
-### Node.js ###
+# Node.js dependencies (remove if not using Node.js)
 node_modules/
 npm-debug.log*
 yarn-debug.log*
@@ -58,16 +55,24 @@ yarn-error.log*
 .pnp.cjs
 .pnp.loader.mjs
 
-### Python ###
+# Python files (remove if not using Python)
 __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
 
-### Linux ###
+# Linux temporary files
 *~
 
-### macOS ###
+# macOS files
 *.DS_Store
 .AppleDouble
 .LSOverride
+
+# Gradle-specific files
+gradlew
+gradlew.bat
+settings.gradle
+
+# Source code
+src/

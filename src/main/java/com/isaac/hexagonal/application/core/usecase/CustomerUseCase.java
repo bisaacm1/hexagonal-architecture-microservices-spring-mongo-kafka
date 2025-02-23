@@ -1,5 +1,6 @@
 package com.isaac.hexagonal.application.core.usecase;
 
+import com.isaac.hexagonal.application.core.domain.Address;
 import com.isaac.hexagonal.application.core.domain.Customer;
 import com.isaac.hexagonal.application.ports.in.CustomerInputPort;
 import com.isaac.hexagonal.application.ports.out.CustomerOutputPort;
@@ -22,7 +23,7 @@ public class CustomerUseCase implements CustomerInputPort {
 
     @Override
     public void insert(Customer customer, String zipCode) {
-        var address = findAddressByZipCodeOutputPort.find(zipCode);
+        Address address = findAddressByZipCodeOutputPort.find(zipCode);
         customer.setAddress(address);
         customerOutputPort.insert(customer);
         sendCpfForValidationOutputPort.send(customer.getCpf());
@@ -31,7 +32,7 @@ public class CustomerUseCase implements CustomerInputPort {
     @Override
     public void update(Customer customer, String zipCode) {
         customerOutputPort.find(customer.getId());
-        var address = findAddressByZipCodeOutputPort.find(zipCode);
+        Address address = findAddressByZipCodeOutputPort.find(zipCode);
         customer.setAddress(address);
         customerOutputPort.update(customer);
     }

@@ -2,6 +2,7 @@ package com.isaac.hexagonal.adapters.out.database;
 
 import java.util.Optional;
 
+import com.isaac.hexagonal.adapters.out.database.document.CustomerDocument;
 import com.isaac.hexagonal.adapters.out.database.repository.CustomerRepository;
 import org.springframework.stereotype.Component;
 
@@ -17,22 +18,22 @@ public class CustomerDataBaseAdapter implements CustomerOutputPort {
 
     @Override
     public void insert(Customer customer) {
-        var customerEntity = customerEntityMapper.toCustomerEntity(customer);
+        CustomerDocument customerEntity = customerEntityMapper.toCustomerEntity(customer);
         customerRepository.save(customerEntity);
     }
 
     @Override
     public void update(Customer customer) {
-        var existingCustomer = customerRepository.findById(customer.getId());
+        Optional<CustomerDocument> existingCustomer = customerRepository.findById(customer.getId());
         existingCustomer.ifPresent(existing -> {
-            var customerEntity = customerEntityMapper.toCustomerEntity(customer);
+            CustomerDocument customerEntity = customerEntityMapper.toCustomerEntity(customer);
             customerRepository.save(customerEntity);
         });
     }
 
     @Override
     public Optional<Customer> find(String id) {
-        var customerEntity = customerRepository.findById(id);
+        Optional<CustomerDocument> customerEntity = customerRepository.findById(id);
         return customerEntity.map(entity -> customerEntityMapper.toCustomer(entity));
     }
 

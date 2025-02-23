@@ -1,5 +1,6 @@
 package com.isaac.hexagonal.adapters.in.consumer;
 
+import com.isaac.hexagonal.application.core.domain.Customer;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
@@ -16,7 +17,7 @@ public class ReceiveValidatedCpfConsumer {
 
     @KafkaListener(topics = "tp-cpf-validated", groupId = "isaac")
     public void receive(CustomerMessage customerMessage) {
-        var customer = customerMessageMapper.toCustomer(customerMessage);
+        Customer customer = customerMessageMapper.toCustomer(customerMessage);
         ucustomerInputPort.update(customer, customerMessage.zipCode());
     }
 

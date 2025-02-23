@@ -21,15 +21,15 @@ public class CustomerControllerAdapter implements CustomerControllerAPI {
 
     @Override
     public ResponseEntity<Void> insert(@Valid @RequestBody CustomerRequest customerRequest) {
-        var customer = customerMapper.toCustomer(customerRequest);
+        Customer customer = customerMapper.toCustomer(customerRequest);
         customerInputPort.insert(customer, customerRequest.zipCode());
         return ResponseEntity.ok().build();
     }
 
     @Override
     public ResponseEntity<CustomerResponse> findById(@PathVariable String id) {
-        var customer = customerInputPort.find(id);
-        var customerResponse = customerMapper.toCustomerResponse(customer);
+        Customer customer = customerInputPort.find(id);
+        CustomerResponse customerResponse = customerMapper.toCustomerResponse(customer);
         return ResponseEntity.ok().body(customerResponse);
     }
 
