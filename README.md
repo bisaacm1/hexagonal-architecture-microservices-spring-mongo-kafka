@@ -72,6 +72,17 @@ Or with Maven:
 ./mvnw test
 ```
 
+Here’s a more concise and creative version of the README:
+
+---
+
+**Inspired by the amazing [Hexagonal Architecture Course](https://www.udemy.com/course/arquitetura-hexagonal-ou-ports-and-adapters-na-pratica/?couponCode=KEEPLEARNINGBR) on Udemy.**  
+Check out the original project on GitHub: [Hexagonal Architecture GitHub](https://github.com/DaniloArantesSilva/hexagonal-architecture).
+
+---
+
+This version highlights the essentials and gives credit in a friendly, easy-to-read way!
+
 ## 🌱 Contributing
 
 Feel free to fork the repository, make changes, and submit pull requests. If you find any bugs or have suggestions, please open an issue!
