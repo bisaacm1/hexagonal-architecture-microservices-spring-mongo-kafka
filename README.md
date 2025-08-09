@@ -2,6 +2,11 @@
 
 Welcome to the **Hexagonal Architecture Microservices Project**! This project demonstrates how to build microservices using **Spring Boot**, **MongoDB**, and **Kafka** while following the principles of **Hexagonal Architecture**. It's designed to be easy to understand and extend.
 
+<div align="center">
+  <img src="./images/hexagonal.png" alt="Hexagonal Architecture Diagram" width="600">
+  <p><em>The Hexagonal Architecture (Ports and Adapters) pattern separates core business logic from external dependencies</em></p>
+</div>
+
 ## 🚀 Features
 
 - **Hexagonal Architecture**: A clean way to structure your code.
